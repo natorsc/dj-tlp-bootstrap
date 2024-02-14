@@ -1,0 +1,53 @@
+<nav class="mt-4">
+    <ul class="pagination align-items-center justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                <i class="bi bi-chevron-double-left"></i>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link disabled">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link disabled">
+                <i class="bi bi-chevron-double-left"></i>
+            </a>
+        </li>
+        {% endif %}
+        <li class="page-item mx-3">
+            {{ page_obj.number|default:'0' }} / {{ page_obj.paginator.num_pages|default:'0' }}
+        </li>
+        {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                <i class="bi bi-chevron-double-right"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link disabled">
+                <i class="bi bi-chevron-double-right"></i>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link disabled">
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

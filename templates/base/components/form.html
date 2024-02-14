@@ -1,0 +1,5 @@
+{% load django_bootstrap5 %}
+<form action="{{ action|default:'.' }}" method="post">{% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-primary" type="submit">{{ button }}</button>
+</form>
