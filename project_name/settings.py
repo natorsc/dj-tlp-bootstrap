@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+
 from pathlib import Path
 
-from environs import Env
+from django.utils.translation import gettext_lazy as _
 
+from environs import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,6 +81,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     # External.
     'django_bootstrap5',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +96,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'nome_do_projeto.urls'
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -126,7 +129,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'nome_do_projeto.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -153,6 +156,13 @@ LANGUAGE_CODE = 'pt-BR'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
+# Rosetta.
+LANGUAGES = [
+    ('pt-BR', _('Português do Brasil')),
+    ('en-US', _('Inglês')),
+]
+LOCALE_PATHS = (BASE_DIR.joinpath('locale'),)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

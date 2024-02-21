@@ -1,10 +1,11 @@
 # Template para o framework Django
 
 - [x] [Bootstrap 5.3](https://getbootstrap.com/).
-- [x] [Django-bootstrap5](https://github.com/zostera/django-bootstrap5).
+- [x] [Django Bootstrap 5](https://github.com/zostera/django-bootstrap5).
 - [x] [Environs](https://github.com/sloria/environs).
 - [x] [Whitenoise](https://github.com/evansd/whitenoise).
-- [x] [Django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar).
+- [x] [Django debug toolbar](https://github.com/jazzband/django-debug-toolbar).
+- [x] [Django rosetta](https://pypi.org/project/django-rosetta/).
 
 ## Como usar
 
@@ -21,6 +22,7 @@ poetry add \
 django \
 whitenoise \
 django-bootstrap5 \
+django-rosetta \
 environs[django]
 ```
 
@@ -48,6 +50,7 @@ poetry add `
 django `
 whitenoise `
 django-bootstrap5 `
+django-rosetta `
 environs[django]
 ```
 
@@ -63,6 +66,22 @@ django-debug-toolbar `
 ## Configurar o projeto
 
 Após instalar as dependências executar o arquivo `proj_conf.py` que está na pasta `_scripts`.
+
+## Tradução
+
+### Gettext
+
+#### Microsoft Windows
+
+- [Gettext iconv windows](https://mlocati.github.io/articles/gettext-iconv-windows.html).
+
+> Adicionar o caminho `C:\Program Files\gettext-iconv\bin` na variável `path` do sistema operacional.
+
+Exemplo de comando para gerar a tradução:
+
+```bash
+django-admin makemessages -l en_US
+```
 
 ---
 

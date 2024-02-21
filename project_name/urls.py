@@ -26,8 +26,13 @@ urlpatterns = [
     path(route='accounts/', view=include('accounts.urls')),
     # Django.
     path(route='accounts/', view=include('django.contrib.auth.urls')),
-    path('admin/', admin.site.urls),
+    path(route='admin/', view=admin.site.urls),
 ]
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path(route='rosetta/', view=include('rosetta.urls'))
+    ]
 
 if settings.DEBUG:
     import debug_toolbar
