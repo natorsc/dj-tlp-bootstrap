@@ -66,6 +66,7 @@ CACHES = {
 INSTALLED_APPS = [
     # Apps.
     'accounts.apps.AccountsConfig',
+    'base.apps.BaseConfig',
     'home.apps.HomeConfig',
     # Django.
     'django.contrib.admin',
@@ -110,7 +111,7 @@ ROOT_URLCONF = '{{ project_name }}.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.joinpath('templates')],
+        # 'DIRS': [BASE_DIR.joinpath('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +120,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # Custom context_processors.
-                # '_context_processors.example.example',
+                # 'base.context_processors.example',
             ],
         },
     },
@@ -155,9 +156,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATICFILES_DIRS = (
-    BASE_DIR.joinpath('static'),
-)
+# STATICFILES_DIRS = (
+#     BASE_DIR.joinpath('static'),
+# )
 
 STATIC_URL = '/public/staticfiles/'
 STATIC_ROOT = BASE_DIR.joinpath('public', 'staticfiles')
