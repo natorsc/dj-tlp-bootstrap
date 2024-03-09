@@ -85,6 +85,48 @@ django-admin makemessages -l en_US
 
 ---
 
+## fixtures
+
+### Dumpdata
+
+#### Linux
+
+```bash
+python -Xutf8 manage.py \
+dumpdata \
+nome-do-app.nome-do-model \
+--indent 4 > nome-do-app/fixtures/data.json
+```
+
+#### Microsoft Windows
+
+```ps
+python -Xutf8 manage.py `
+dumpdata `
+nome-do-app.nome-do-model `
+--indent 4 > nome-do-app\fixtures\data.json
+```
+
+### Loaddata
+
+#### Linux
+
+```bash
+python -Xutf8 manage.py \
+loaddata \
+nome-do-app/fixtures/data.json
+```
+
+#### Microsoft Windows
+
+```bash
+python -Xutf8 manage.py `
+loaddata `
+nome-do-app\fixtures\data.json
+```
+
+---
+
 ## Django
 
 [Django](https://www.djangoproject.com/) é um framework web de alto nível, escrito em Python, que permite o desenvolvimento rápido de aplicações web seguras e escaláveis.
