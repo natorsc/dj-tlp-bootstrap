@@ -94,7 +94,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'nome_do_projeto.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -127,7 +127,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'nome_do_projeto.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
